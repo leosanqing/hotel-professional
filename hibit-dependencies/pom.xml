@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.hibit</groupId>
+    <artifactId>hibit-dependencies</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+    <properties>
+        <revision>1.0.0</revision>
+
+        <spring.boot.version>2.6.4</spring.boot.version>
+
+
+        <!-- Web 相关 -->
+        <knife4j.version>3.0.2</knife4j.version>
+        <swagger-annotations.version>1.5.22</swagger-annotations.version>
+        <servlet.versoin>2.5</servlet.versoin>
+        <!-- DB 相关 -->
+        <mysql.version>5.1.46</mysql.version>
+        <druid.version>1.2.8</druid.version>
+        <mybatis-plus.version>3.4.3.4</mybatis-plus.version>
+        <dynamic-datasource.version>3.5.0</dynamic-datasource.version>
+        <redisson.version>3.16.6</redisson.version>
+        <!-- Config 配置中心相关 -->
+        <apollo.version>1.7.0</apollo.version>
+        <!-- Job 定时任务相关 -->
+        <!-- 服务保障相关 -->
+        <lock4j.version>2.2.0</lock4j.version>
+        <resilience4j.version>1.7.0</resilience4j.version>
+        <!-- 监控相关 -->
+        <skywalking.version>8.7.0</skywalking.version>
+        <spring-boot-admin.version>2.6.2</spring-boot-admin.version>
+        <opentracing.version>0.31.0</opentracing.version>
+        <!-- Test 测试相关 -->
+        <podam.version>7.2.6.RELEASE</podam.version>
+        <jedis-mock.version>0.1.16</jedis-mock.version>
+        <mockito-inline.version>3.9.0</mockito-inline.version>
+        <!-- Bpm 工作流相关 -->
+        <activiti.version>7.1.0.M6</activiti.version>
+        <flowable.version>6.7.0</flowable.version>
+        <!-- 工具类相关 -->
+        <lombok.version>1.18.22</lombok.version>
+        <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <hutool.version>5.7.21</hutool.version>
+        <easyexcel.verion>2.2.7</easyexcel.verion>
+        <velocity.version>2.2</velocity.version>
+        <screw.version>1.0.5</screw.version>
+        <guava.version>31.0.1-jre</guava.version>
+        <transmittable-thread-local.version>2.12.2</transmittable-thread-local.version>
+        <!-- 三方云服务相关 -->
+        <aliyun-java-sdk-core.version>4.5.25</aliyun-java-sdk-core.version>
+        <aliyun-java-sdk-dysmsapi.version>2.1.0</aliyun-java-sdk-dysmsapi.version>
+        <yunpian-java-sdk.version>1.2.7</yunpian-java-sdk.version>
+        <justauth.version>1.4.0</justauth.version>
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- 统一依赖管理 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- 业务组件 -->
+            <dependency>
+                <groupId>cn.iocoder.boot</groupId>
+                <artifactId>yudao-spring-boot-starter-biz-operatelog</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.iocoder.boot</groupId>
+                <artifactId>yudao-spring-boot-starter-biz-dict</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.iocoder.boot</groupId>
+                <artifactId>yudao-spring-boot-starter-biz-sms</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.iocoder.boot</groupId>
+                <artifactId>yudao-spring-boot-starter-biz-pay</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.iocoder.boot</groupId>
+                <artifactId>yudao-spring-boot-starter-biz-weixin</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.iocoder.boot</groupId>
+                <artifactId>yudao-spring-boot-starter-biz-tenant</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.iocoder.boot</groupId>
+                <artifactId>yudao-spring-boot-starter-biz-data-permission</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hibit</groupId>
+                <artifactId>hibit-spring-boot-starter-biz-social</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <!-- Spring 核心 -->
+            <dependency>
+                <!-- 用于生成自定义的 Spring @ConfigurationProperties 配置类的说明文件 -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <!-- Web 相关 -->
+            <dependency>
+                <groupId>cn.hibit</groupId>
+                <artifactId>hibit-spring-boot-starter-starter-web</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hibit</groupId>
+                <artifactId>hibit-spring-boot-starter-security</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>mapstruct</artifactId>
+                        <groupId>org.mapstruct</groupId> <!-- 避免冲突 -->
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>guava</artifactId>
+                        <groupId>com.google.guava</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>swagger-annotations</artifactId>
+                        <groupId>io.swagger</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger-annotations.version}</version>
+            </dependency>
+
+            <!-- DB 相关 -->
+            <dependency>
+                <groupId>cn.hibit</groupId>
+                <artifactId>hibit-spring-boot-starter-mybatis-plus</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId> <!-- 多数据源 -->
+                <version>${dynamic-datasource.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hibit</groupId>
+                <artifactId>hibit-spring-boot-starter-redis</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+
+            <!-- 工具类相关 -->
+            <dependency>
+                <groupId>cn.hibit</groupId>
+                <artifactId>hibit-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId> <!-- use mapstruct-jdk8 for Java 8 or higher -->
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <!-- 解决 ThreadLocal 父子线程的传值问题 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable-thread-local.version}</version>
+            </dependency>
+
+            <!-- 工具类结束 -->
+
+            <!-- 监控相关 -->
+            <dependency>
+                <groupId>cn.iocoder.boot</groupId>
+                <artifactId>yudao-spring-boot-starter-monitor</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-trace</artifactId>
+                <version>${skywalking.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-logback-1.x</artifactId>
+                <version>${skywalking.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-opentracing</artifactId>
+                <version>${skywalking.version}</version>
+                <!--                <exclusions>-->
+                <!--                    <exclusion>-->
+                <!--                        <artifactId>opentracing-api</artifactId>-->
+                <!--                        <groupId>io.opentracing</groupId>-->
+                <!--                    </exclusion>-->
+                <!--                    <exclusion>-->
+                <!--                        <artifactId>opentracing-util</artifactId>-->
+                <!--                        <groupId>io.opentracing</groupId>-->
+                <!--                    </exclusion>-->
+                <!--                </exclusions>-->
+            </dependency>
+            <dependency>
+                <groupId>io.opentracing</groupId>
+                <artifactId>opentracing-api</artifactId>
+                <version>${opentracing.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.opentracing</groupId>
+                <artifactId>opentracing-util</artifactId>
+                <version>${opentracing.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.opentracing</groupId>
+                <artifactId>opentracing-noop</artifactId>
+                <version>${opentracing.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId> <!-- 实现 Spring Boot Admin Server 服务端 -->
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId> <!-- 实现 Spring Boot Admin Server 服务端 -->
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+
+
+            <!-- 服务保障相关 -->
+            <dependency>
+                <groupId>cn.iocoder.boot</groupId>
+                <artifactId>yudao-spring-boot-starter-protection</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>lock4j-redisson-spring-boot-starter</artifactId>
+                <version>${lock4j.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>redisson-spring-boot-starter</artifactId>
+                        <groupId>org.redisson</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-ratelimiter</artifactId>
+                <version>${resilience4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-spring-boot2</artifactId>
+                <version>${resilience4j.version}</version>
+            </dependency>
+            <!-- 服务保障相关结束 -->
+
+            <dependency>
+                <groupId>com.xkcoding.justauth</groupId>
+                <artifactId>justauth-spring-boot-starter</artifactId> <!-- 社交登陆（例如说，个人微信、企业微信等等） -->
+                <version>${justauth.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

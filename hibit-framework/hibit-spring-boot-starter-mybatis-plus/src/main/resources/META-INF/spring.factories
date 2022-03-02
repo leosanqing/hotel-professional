@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  cn.hibit.framework.datasource.config.HibitDataSourceAutoConfiguration,\
+  cn.hibit.framework.mybatis.config.HibitMybatisAutoConfiguration

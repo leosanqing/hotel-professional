@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  cn.hibit.framework.apilog.config.HibitApiLogAutoConfiguration,\
+  cn.hibit.framework.jackson.config.HibitJacksonAutoConfiguration,\
+  cn.hibit.framework.swagger.config.HibitSwaggerAutoConfiguration,\
+  cn.hibit.framework.web.config.HibitWebAutoConfiguration

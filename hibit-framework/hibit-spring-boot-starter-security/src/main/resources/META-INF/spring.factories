@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  cn.hibit.framework.security.config.HibitSecurityAutoConfiguration,\
+  cn.hibit.framework.security.config.HibitWebSecurityConfigurerAdapter
