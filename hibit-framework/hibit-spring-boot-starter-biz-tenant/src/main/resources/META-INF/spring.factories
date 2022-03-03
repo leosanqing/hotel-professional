@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  cn.hibit.framework.tenant.config.HibitTenantAutoConfiguration

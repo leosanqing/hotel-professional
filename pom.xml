@@ -12,6 +12,8 @@
         <module>hibit-dependencies</module>
         <module>hibit-framework</module>
         <module>hibit-module-system</module>
+        <module>hibit-module-member</module>
+        <module>hibit-module-infra</module>
     </modules>
 
 

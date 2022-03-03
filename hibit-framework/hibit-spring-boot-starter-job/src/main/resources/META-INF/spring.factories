@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  cn.hibit.framework.quartz.config.HibitAsyncAutoConfiguration,\
+  cn.hibit.framework.quartz.config.HibitQuartzAutoConfiguration

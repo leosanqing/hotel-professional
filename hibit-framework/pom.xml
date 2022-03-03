@@ -18,6 +18,16 @@
         <module>hibit-spring-boot-starter-biz-social</module>
         <module>hibit-spring-boot-starter-redis</module>
         <module>hibit-spring-boot-starter-security</module>
+        <module>hibit-spring-boot-starter-biz-operatelog</module>
+        <module>hibit-spring-boot-starter-mq</module>
+        <module>hibit-spring-boot-starter-test</module>
+        <module>hibit-spring-boot-starter-biz-tenant</module>
+        <module>hibit-spring-boot-starter-job</module>
+        <module>hibit-spring-boot-starter-biz-weixin</module>
+        <module>hibit-spring-boot-starter-excel</module>
+        <module>hibit-spring-boot-starter-biz-dict</module>
+        <module>hibit-spring-boot-starter-biz-sms</module>
+        <module>hibit-spring-boot-starter-biz-data-permission</module>
     </modules>
 
 </project>

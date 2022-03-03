@@ -9,18 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>hibit-module-system</artifactId>
-
+    <artifactId>hibit-module-infra</artifactId>
     <packaging>pom</packaging>
-
-    <name>${project.artifactId}</name>
-    <description>
-        system 模块下，我们放通用业务，支撑上层的核心业务。
-        例如说：用户、部门、权限、数据字典等等
-    </description>
     <modules>
-        <module>hibit-module-system-api</module>
-        <module>hibit-module-system-impl</module>
+        <module>hibit-module-infra-api</module>
     </modules>
+
 
 </project>
